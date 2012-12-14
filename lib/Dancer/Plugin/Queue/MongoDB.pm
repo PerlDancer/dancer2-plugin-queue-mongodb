@@ -61,7 +61,7 @@ other attributes.
 has queue => (
   is           => 'ro',
   isa          => 'MongoDBx::Queue',
-  lazy_builder => 1,
+  lazy_build => 1,
 );
 
 sub _build_queue {
@@ -80,12 +80,29 @@ has _mongodb_conn => (
 
 sub _build__mongodb_conn {
   my ($self) = @_;
-  return MongoDB::Connection->new( $self->connection );
+  return MongoDB::Connection->new( $self->connection_options );
+}
+
+sub add_msg {
+  my ( $self, $data ) = @_;
+  $self->queue->add_task($data);
+}
+
+sub get_msg {
+  my ($self) = @_;
+  my $msg = $self->queue->reserve_task;
+  my $data = { map { $_ => $msg->{$_} } grep { /^[^_]/ } keys %$msg };
+  return ( $msg, $data );
+}
+
+sub remove_msg {
+  my ( $self, $msg ) = @_;
+  $self->queue->remove_task($msg);
 }
 
 1;
 
-=for Pod::Coverage method_names_here
+=for Pod::Coverage add_msg get_msg remove_msg
 
 =head1 SYNOPSIS
 
