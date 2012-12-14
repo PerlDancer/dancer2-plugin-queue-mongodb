@@ -59,8 +59,8 @@ other attributes.
 =cut
 
 has queue => (
-  is           => 'ro',
-  isa          => 'MongoDBx::Queue',
+  is         => 'ro',
+  isa        => 'MongoDBx::Queue',
   lazy_build => 1,
 );
 
@@ -85,14 +85,13 @@ sub _build__mongodb_conn {
 
 sub add_msg {
   my ( $self, $data ) = @_;
-  $self->queue->add_task($data);
+  $self->queue->add_task( { data => $data } );
 }
 
 sub get_msg {
   my ($self) = @_;
   my $msg = $self->queue->reserve_task;
-  my $data = { map { $_ => $msg->{$_} } grep { /^[^_]/ } keys %$msg };
-  return ( $msg, $data );
+  return ( $msg, $msg->{data} );
 }
 
 sub remove_msg {

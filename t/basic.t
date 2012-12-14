@@ -9,18 +9,23 @@ use MongoDBx::Queue;
 my $conn = eval { MongoDB::Connection->new; };
 plan skip_all => "No MongoDB on localhost" unless $conn;
 
+my $db_name = 'test_dancer_plugin_queue_mongodb';
+
+# make sure we clean up from prior runs
+my $db   = $conn->get_database($db_name);
+my $coll = $db->get_collection('queue');
+$coll->drop;
+
 {
 
   use Dancer;
   use Dancer::Plugin::Queue;
 
-  set show_errors => 1;
-
   set plugins => {
     Queue => {
       default => {
         class   => 'MongoDB',
-        options => { db_name => 'dpqm_test' },
+        options => { db_name => $db_name },
       },
     }
   };
