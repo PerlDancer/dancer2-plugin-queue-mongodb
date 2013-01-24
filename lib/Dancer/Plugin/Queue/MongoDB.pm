@@ -9,6 +9,7 @@ package Dancer::Plugin::Queue::MongoDB;
 # Dependencies
 use Moose;
 use MongoDB;
+use MongoDB::MongoClient; # ensure we have a new-enough MongoDB client
 use MongoDBx::Queue;
 
 with 'Dancer::Plugin::Queue::Role::Queue';
@@ -67,20 +68,20 @@ has queue => (
 sub _build_queue {
   my ($self) = @_;
   return MongoDBx::Queue->new(
-    db   => $self->_mongodb_conn->get_database( $self->db_name ),
+    db   => $self->_mongodb_client->get_database( $self->db_name ),
     name => $self->queue_name,
   );
 }
 
-has _mongodb_conn => (
+has _mongodb_client => (
   is         => 'ro',
-  isa        => 'MongoDB::Connection',
+  isa        => 'MongoDB::MongoClient',
   lazy_build => 1,
 );
 
-sub _build__mongodb_conn {
+sub _build__mongodb_client {
   my ($self) = @_;
-  return MongoDB::Connection->new( $self->connection_options );
+  return MongoDB::MongoClient->new( $self->connection_options );
 }
 
 sub add_msg {

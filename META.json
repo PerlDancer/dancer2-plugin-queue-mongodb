@@ -4,7 +4,7 @@
       "David Golden <dagolden@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "apache_2_0"
    ],
@@ -42,6 +42,7 @@
          "requires" : {
             "Dancer::Plugin::Queue::Role::Queue" : "0",
             "MongoDB" : "0",
+            "MongoDB::MongoClient" : "0",
             "MongoDBx::Queue" : "0",
             "Moose" : "0",
             "perl" : "5.008001",
@@ -64,13 +65,13 @@
    "provides" : {
       "Dancer::Plugin::Queue::MongoDB" : {
          "file" : "lib/Dancer/Plugin/Queue/MongoDB.pm",
-         "version" : "0.001"
+         "version" : "0.002"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com//dancer-plugin-queue-mongodb/issues"
+         "web" : "https://github.com/dagolden/dancer-plugin-queue-mongodb/issues"
       },
       "homepage" : "https://metacpan.org/release/Dancer-Plugin-Queue-MongoDB",
       "repository" : {
@@ -79,6 +80,6 @@
          "web" : "https://github.com/dagolden/dancer-plugin-queue-mongodb"
       }
    },
-   "version" : "0.001"
+   "version" : "0.002"
 }
 

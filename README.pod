@@ -6,7 +6,7 @@ Dancer::Plugin::Queue::MongoDB - No abstract given for Dancer::Plugin::Queue::Mo
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
@@ -86,7 +86,7 @@ L<MongoDB::Connection>
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through the issue tracker
-at L<https://github.com//dancer-plugin-queue-mongodb/issues>.
+at L<https://github.com/dagolden/dancer-plugin-queue-mongodb/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
