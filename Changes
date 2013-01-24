@@ -2,6 +2,8 @@ Revision history for Dancer-Plugin-Queue-MongoDB
 
 {{$NEXT}}
 
+0.002     2013-01-24 16:51:17 America/New_York
+
     - Updated to use new MongoDB::MongoClient class instead of
       MongoDB::Connection
 
