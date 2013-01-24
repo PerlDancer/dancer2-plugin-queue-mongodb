@@ -1,5 +1,5 @@
 {
-   "abstract" : "No abstract given for Dancer::Plugin::Queue::MongoDB",
+   "abstract" : "Dancer::Plugin::Queue backend using MongoDB",
    "author" : [
       "David Golden <dagolden@cpan.org>"
    ],
@@ -65,7 +65,7 @@
    "provides" : {
       "Dancer::Plugin::Queue::MongoDB" : {
          "file" : "lib/Dancer/Plugin/Queue/MongoDB.pm",
-         "version" : "0.002"
+         "version" : "0.003"
       }
    },
    "release_status" : "stable",
@@ -80,6 +80,6 @@
          "web" : "https://github.com/dagolden/dancer-plugin-queue-mongodb"
       }
    },
-   "version" : "0.002"
+   "version" : "0.003"
 }
 

@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 package Dancer::Plugin::Queue::MongoDB;
-# ABSTRACT: No abstract given for Dancer::Plugin::Queue::MongoDB
+# ABSTRACT: Dancer::Plugin::Queue backend using MongoDB
 # VERSION
 
 # Dependencies
