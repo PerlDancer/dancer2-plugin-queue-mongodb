@@ -1,10 +1,10 @@
 {
-   "abstract" : "Dancer::Plugin::Queue backend using MongoDB",
+   "abstract" : "Dancer2::Plugin::Queue backend using MongoDB",
    "author" : [
       "David Golden <dagolden@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "apache_2_0"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Dancer-Plugin-Queue-MongoDB",
+   "name" : "Dancer2-Plugin-Queue-MongoDB",
    "no_index" : {
       "directory" : [
          "t",
@@ -40,7 +40,8 @@
       },
       "runtime" : {
          "requires" : {
-            "Dancer::Plugin::Queue::Role::Queue" : "0",
+            "Dancer2::Plugin::Queue" : "0.003",
+            "Dancer2::Plugin::Queue::Role::Queue" : "0",
             "MongoDB" : "0",
             "MongoDB::MongoClient" : "0",
             "MongoDBx::Queue" : "0",
@@ -52,32 +53,37 @@
       },
       "test" : {
          "requires" : {
-            "Dancer" : "0",
-            "Dancer::Plugin::Queue" : "0",
-            "Dancer::Test" : "0",
+            "Dancer2::Plugin::Queue::Role::Test" : "0",
+            "ExtUtils::MakeMaker" : "0",
             "File::Find" : "0",
+            "File::Spec::Functions" : "0",
             "File::Temp" : "0",
+            "HTTP::Tiny" : "0",
+            "List::Util" : "0",
             "MongoDB" : "0.45",
-            "Test::More" : "0.96"
+            "MooX::Types::MooseLike::Base" : "0",
+            "Test::More" : "0",
+            "Test::Roo" : "0",
+            "Test::TCP" : "0"
          }
       }
    },
    "provides" : {
-      "Dancer::Plugin::Queue::MongoDB" : {
-         "file" : "lib/Dancer/Plugin/Queue/MongoDB.pm",
+      "Dancer2::Plugin::Queue::MongoDB" : {
+         "file" : "lib/Dancer2/Plugin/Queue/MongoDB.pm",
          "version" : "0.003"
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/dagolden/dancer-plugin-queue-mongodb/issues"
+         "web" : "https://github.com/dagolden/dancer2-plugin-queue-mongodb/issues"
       },
-      "homepage" : "https://metacpan.org/release/Dancer-Plugin-Queue-MongoDB",
+      "homepage" : "https://metacpan.org/release/Dancer2-Plugin-Queue-MongoDB",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/dagolden/dancer-plugin-queue-mongodb.git",
-         "web" : "https://github.com/dagolden/dancer-plugin-queue-mongodb"
+         "url" : "git://github.com/dagolden/dancer2-plugin-queue-mongodb.git",
+         "web" : "https://github.com/dagolden/dancer2-plugin-queue-mongodb"
       }
    },
    "version" : "0.003"

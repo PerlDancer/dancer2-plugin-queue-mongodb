@@ -2,8 +2,8 @@ use 5.008001;
 use strict;
 use warnings;
 
-package Dancer::Plugin::Queue::MongoDB;
-# ABSTRACT: Dancer::Plugin::Queue backend using MongoDB
+package Dancer2::Plugin::Queue::MongoDB;
+# ABSTRACT: Dancer2::Plugin::Queue backend using MongoDB
 # VERSION
 
 # Dependencies
@@ -12,7 +12,7 @@ use MongoDB;
 use MongoDB::MongoClient; # ensure we have a new-enough MongoDB client
 use MongoDBx::Queue;
 
-with 'Dancer::Plugin::Queue::Role::Queue';
+with 'Dancer2::Plugin::Queue::Role::Queue';
 
 =attr db_name
 
@@ -118,9 +118,9 @@ sub remove_msg {
           connection_options:
             host: mongodb://localhost:27017
 
-  # in Dancer app
+  # in Dancer2 app
 
-  use Dancer::Plugin::Queue::MongoDB;
+  use Dancer2::Plugin::Queue::MongoDB;
 
   get '/' => sub {
     queue->add_msg( $data );
@@ -128,16 +128,16 @@ sub remove_msg {
 
 =head1 DESCRIPTION
 
-This module implements a L<Dancer::Plugin::Queue> using L<MongoDBx::Queue>.
+This module implements a L<Dancer2::Plugin::Queue> using L<MongoDBx::Queue>.
 
 =head1 USAGE
 
-See documentation for L<Dancer::Plugin::Queue>.
+See documentation for L<Dancer2::Plugin::Queue>.
 
 =head1 SEE ALSO
 
 =for :list
-* L<Dancer::Plugin::Queue>
+* L<Dancer2::Plugin::Queue>
 * L<MongoDBx::Queue>
 * L<MongoDB::Connection>
 

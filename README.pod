@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Dancer::Plugin::Queue::MongoDB - Dancer::Plugin::Queue backend using MongoDB
+Dancer2::Plugin::Queue::MongoDB - Dancer2::Plugin::Queue backend using MongoDB
 
 =head1 VERSION
 
@@ -22,9 +22,9 @@ version 0.003
           connection_options:
             host: mongodb://localhost:27017
 
-  # in Dancer app
+  # in Dancer2 app
 
-  use Dancer::Plugin::Queue::MongoDB;
+  use Dancer2::Plugin::Queue::MongoDB;
 
   get '/' => sub {
     queue->add_msg( $data );
@@ -32,7 +32,7 @@ version 0.003
 
 =head1 DESCRIPTION
 
-This module implements a L<Dancer::Plugin::Queue> using L<MongoDBx::Queue>.
+This module implements a L<Dancer2::Plugin::Queue> using L<MongoDBx::Queue>.
 
 =head1 ATTRIBUTES
 
@@ -59,7 +59,7 @@ other attributes.
 
 =head1 USAGE
 
-See documentation for L<Dancer::Plugin::Queue>.
+See documentation for L<Dancer2::Plugin::Queue>.
 
 =head1 SEE ALSO
 
@@ -67,7 +67,7 @@ See documentation for L<Dancer::Plugin::Queue>.
 
 =item *
 
-L<Dancer::Plugin::Queue>
+L<Dancer2::Plugin::Queue>
 
 =item *
 
@@ -86,7 +86,7 @@ L<MongoDB::Connection>
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests through the issue tracker
-at L<https://github.com/dagolden/dancer-plugin-queue-mongodb/issues>.
+at L<https://github.com/dagolden/dancer2-plugin-queue-mongodb/issues>.
 You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
@@ -94,9 +94,9 @@ You will be notified automatically of any progress on your issue.
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-L<https://github.com/dagolden/dancer-plugin-queue-mongodb>
+L<https://github.com/dagolden/dancer2-plugin-queue-mongodb>
 
-  git clone git://github.com/dagolden/dancer-plugin-queue-mongodb.git
+  git clone git://github.com/dagolden/dancer2-plugin-queue-mongodb.git
 
 =head1 AUTHOR
 

@@ -2,6 +2,12 @@ Revision history for Dancer-Plugin-Queue-MongoDB
 
 {{$NEXT}}
 
+    [CHANGED]
+
+    - Forked to Dancer2::Plugin::Queue::MongoDB
+
+**** Prior history is for Dancer::Plugin::Queue ****
+
 0.002     2013-01-24 16:51:17 America/New_York
 
     - Updated to use new MongoDB::MongoClient class instead of
